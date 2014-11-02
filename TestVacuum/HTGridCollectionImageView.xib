@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTGridCollectionImageView">
+            <connections>
+                <outlet property="defaultIcon" destination="k3h-8t-2f0" id="6em-BD-1ea"/>
+                <outlet property="shadowView" destination="F04-9B-pUR" id="sJ4-7P-dNa"/>
+                <outlet property="thumbImageView" destination="8y8-Ti-TWh" id="Rlp-Lj-vPs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-8t-2f0" userLabel="Default Icon">
+                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8y8-Ti-TWh" userLabel="Thumbnail Image">
+                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F04-9B-pUR" userLabel="InnerShadow" customClass="InnerShadowUIView">
+                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="F04-9B-pUR" secondAttribute="trailing" id="7KZ-Eu-1LE"/>
+                <constraint firstItem="k3h-8t-2f0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8fX-Uv-8QR"/>
+                <constraint firstItem="F04-9B-pUR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SjS-cg-vy6"/>
+                <constraint firstAttribute="trailing" secondItem="k3h-8t-2f0" secondAttribute="trailing" id="V0y-SC-cHC"/>
+                <constraint firstItem="F04-9B-pUR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vcc-jJ-30l"/>
+                <constraint firstAttribute="trailing" secondItem="8y8-Ti-TWh" secondAttribute="trailing" id="Wg3-Lb-dov"/>
+                <constraint firstItem="8y8-Ti-TWh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZYC-HG-gME"/>
+                <constraint firstAttribute="bottom" secondItem="8y8-Ti-TWh" secondAttribute="bottom" id="Ztp-8V-kKc"/>
+                <constraint firstItem="8y8-Ti-TWh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eXi-de-FOX"/>
+                <constraint firstAttribute="bottom" secondItem="F04-9B-pUR" secondAttribute="bottom" id="kiU-vE-FVZ"/>
+                <constraint firstAttribute="bottom" secondItem="k3h-8t-2f0" secondAttribute="bottom" id="lbf-Sv-ZDq"/>
+                <constraint firstItem="k3h-8t-2f0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="nc2-mA-a7Y"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
