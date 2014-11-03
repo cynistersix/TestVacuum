@@ -62,11 +62,11 @@
         [self addSubview:view];
     }
     
-    [self.gridButton setImage:[UIImage imageNamed:@"GridViewActive"] forState:UIControlStateSelected];
-    [self.gridButton setImage:[UIImage imageNamed:@"GridViewDeactive"] forState:UIControlStateNormal];
+    [self.gridButton setImage:[UIImage imageNamed:@"icon-sort-grid-active"] forState:UIControlStateSelected];
+    [self.gridButton setImage:[UIImage imageNamed:@"icon-sort-grid"] forState:UIControlStateNormal];
     
-    [self.listButton setImage:[UIImage imageNamed:@"ListViewActive"] forState:UIControlStateSelected];
-    [self.listButton setImage:[UIImage imageNamed:@"ListViewDeactive"] forState:UIControlStateNormal];
+    [self.listButton setImage:[UIImage imageNamed:@"icon-sort-list-active"] forState:UIControlStateSelected];
+    [self.listButton setImage:[UIImage imageNamed:@"icon-sort-list"] forState:UIControlStateNormal];
     
     [self.gridButton addTarget:self action:@selector(gridButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.listButton addTarget:self action:@selector(listButtonAction:) forControlEvents:UIControlEventTouchUpInside];

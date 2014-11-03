@@ -205,7 +205,7 @@
 			name = Storyboard;
 			sourceTree = "<group>";
 		};
-		069523E7192FF85F00492871 /* Grid Cells */ = {
+		069523E7192FF85F00492871 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				06B673EA192D5DB800815E14 /* HTGridCollectionImageView.h */,
@@ -221,27 +221,24 @@
 				069523E3192FE12000492871 /* HTGridCollectionToggleView.m */,
 				069523E4192FE12000492871 /* HTGridCollectionToggleView.xib */,
 			);
-			name = "Grid Cells";
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		06B673D4192A82DF00815E14 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				06CD66BE1A06FBBA000CD419 /* GridView */,
 				06B673E6192D496D00815E14 /* Utils */,
-				06B673D5192A82E600815E14 /* GridView Thumbnails */,
+				06B673D5192A82E600815E14 /* Thumbnails */,
 			);
 			name = UI;
 			sourceTree = "<group>";
 		};
-		06B673D5192A82E600815E14 /* GridView Thumbnails */ = {
+		06B673D5192A82E600815E14 /* Thumbnails */ = {
 			isa = PBXGroup;
 			children = (
-				069523E7192FF85F00492871 /* Grid Cells */,
-				06B673D6192A84B000815E14 /* HTGridCollectionViewController.h */,
-				06B673D7192A84B000815E14 /* HTGridCollectionViewController.m */,
-				06B673D8192A84B000815E14 /* HTGridCollectionViewController.xib */,
 			);
-			name = "GridView Thumbnails";
+			name = Thumbnails;
 			sourceTree = "<group>";
 		};
 		06B673E6192D496D00815E14 /* Utils */ = {
@@ -251,6 +248,17 @@
 				06B673E8192D501900815E14 /* InnerShadowUIView.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		06CD66BE1A06FBBA000CD419 /* GridView */ = {
+			isa = PBXGroup;
+			children = (
+				069523E7192FF85F00492871 /* Cells */,
+				06B673D6192A84B000815E14 /* HTGridCollectionViewController.h */,
+				06B673D7192A84B000815E14 /* HTGridCollectionViewController.m */,
+				06B673D8192A84B000815E14 /* HTGridCollectionViewController.xib */,
+			);
+			name = GridView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

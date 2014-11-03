@@ -3,12 +3,16 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "icon-sort-grid-active.png"
+      "filename" : "GridViewDeactive.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "icon-sort-grid-active@2x.png"
+      "filename" : "GridViewDeactive@2x.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

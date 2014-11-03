@@ -3,12 +3,16 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "icon-sort-list.png"
+      "filename" : "ListViewActive.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "icon-sort-list@2x.png"
+      "filename" : "ListViewActive@2x.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
