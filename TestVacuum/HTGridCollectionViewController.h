@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HTGridCollectionToggleCell.h"
+#import "HTGridCollectionHeaderView.h"
 
 @interface HTGridCollectionViewController : UIViewController <UICollectionViewDelegate,
                                                               UICollectionViewDataSource,
                                                               UICollectionViewDelegateFlowLayout,
-                                                              HTGridCollectionToggleCellDelegate>
+                                                              HTGridCollectionToggleCellDelegate,
+                                                              HTGridCollectionToggleHeaderDelegate>
 
 @end

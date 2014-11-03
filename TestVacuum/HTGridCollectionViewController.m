@@ -22,8 +22,9 @@ const float kToggleCellHeight = 50.f;
 const float kGridCellWidthPortrait = 144.f;
 const float kGridCellHeightPortrait = 188.f;
 
-#define kGridListViewToggleSection 0
-#define kGridListViewItemsSection  1
+// This is now in the header
+// #define kGridListViewToggleSection 0
+#define kGridListViewItemsSection  0
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -68,8 +69,14 @@ const float kGridCellHeightPortrait = 188.f;
     [flowLayout setItemSize:CGSizeMake(kGridCellWidthPortrait, kGridCellHeightPortrait)];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     flowLayout.sectionInset = UIEdgeInsetsMake(10.f, 10.f, 40.f, 10.f);
+    flowLayout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, kToggleCellHeight);
     
     [self.collectionView setCollectionViewLayout:flowLayout];
+    
+    // setup header
+    [self.collectionView registerClass:[HTGridCollectionHeaderView class]
+            forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                   withReuseIdentifier:@"HeaderView"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -99,75 +106,93 @@ const float kGridCellHeightPortrait = 188.f;
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     // this is to handle the toggle row
-    if (section == 0) {
-        return 1;
-    }
+//    if (section == 0) {
+//        return 1;
+//    }
     
     return [_items count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 2;
+//    return 2;
+    // using a header to hold the toggler
+    return 1;
 }
 
 #pragma mark - UICollectionViewDelegate
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+referenceSizeForHeaderInSection:(NSInteger)section
+{
+    // only one section at the moment
+    NSAssert(section == 0, @"This code does not handle multiple sections");
+    
+    return CGSizeMake(self.view.frame.size.width, kToggleCellHeight);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout  *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+// moved this to header
     // this is to handle the toggle row
-    if (indexPath.section == 0) {
-        return CGSizeMake(self.view.frame.size.width, kToggleCellHeight);
-    }
+//    if (indexPath.section == 0) {
+//        return CGSizeMake(self.view.frame.size.width, kToggleCellHeight);
+//    }
+    
+    NSAssert(indexPath.section == 0, @"There is only 1 section for this design at the moment");
     
     return CGSizeMake(kGridCellWidthPortrait, kGridCellHeightPortrait);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    // this is to handle the toggle row
-    if (section == 0) {
-        return UIEdgeInsetsMake(0.f, 0.f, 0.f, 0.f);
-    } else {
-        return UIEdgeInsetsMake(0.f, 10.f, 10.f, 10.f);
+    NSAssert(section == 0, @"Only 1 section is supported at this time");
+    
+    return UIEdgeInsetsMake(0.f, 10.f, 10.f, 10.f);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath
+{
+    NSAssert(indexPath.section == 0, @"Only 1 section is supported at this time");
+    
+    UICollectionReusableView *reusableview = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        HTGridCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+
+        reusableview = headerView;
+        headerView.delegate = self;
+        
+        // TODO: Use the state set in the NSUserDefaults
+        [headerView toggleToGridView:YES];
     }
+    
+    return reusableview;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        HTGridCollectionToggleCell *toggleCell = nil;
-        
-        toggleCell = (HTGridCollectionToggleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellForToggle" forIndexPath:indexPath];
-        
-        toggleCell.delegate = self;
-        
-        //TODO: Setup NSUserDefaults to pickup display key
-        [toggleCell toggleToGridView:NO];
-        
-        return toggleCell;
-        
-    } else {
+    HTGridCollectionViewCell *cell = nil;
     
-        HTGridCollectionViewCell *cell = nil;
-        
-        cell = (HTGridCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellForFile" forIndexPath:indexPath];
-        
-        // TODO: REMOVE CellNum property and field this is TEST DATA
-        cell.cellNum.text = [NSString stringWithFormat:@"%li", (long)indexPath.row];
-        
-        if ((indexPath.row+1) % 3 == 0) {
-            // Default file icon handling
-            [cell setDefaultFileType:@"FOLDER"];
-        }
-        else {
-            [cell setImageNamed:@"SampleThumb"];
-        }
-        
-        return cell;
+    cell = (HTGridCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellForFile" forIndexPath:indexPath];
+    
+    // TODO: REMOVE CellNum property and field this is TEST DATA
+    cell.cellNum.text = [NSString stringWithFormat:@"%li", (long)indexPath.row];
+    
+    if ((indexPath.row+1) % 3 == 0) {
+        // Default file icon handling
+        [cell setDefaultFileType:@"FOLDER"];
     }
+    else {
+        [cell setImageNamed:@"SampleThumb"];
+    }
+    
+    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -248,6 +273,18 @@ static CGFloat scrollStart = kToggleCellHeight;
 {
     // TODO: Handle toggle of cell layout
     // TODO: UX to redesign this completely as spec is missing
+}
+
+#pragma mark - HTGridCollectionToggleHeaderDelegate
+
+- (void)htGridCollectionToggleHeader:(HTGridCollectionHeaderView *)cell willToggleToGrid:(BOOL)gridView
+{
+    
+}
+
+- (void)htGridCollectionToggleHeader:(HTGridCollectionHeaderView *)cell didToggleToGrid:(BOOL)gridView
+{
+    
 }
 
 @end
