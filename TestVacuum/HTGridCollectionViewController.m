@@ -159,7 +159,7 @@ const float kGridCellHeightPortrait = 188.f;
         cell.cellNum.text = [NSString stringWithFormat:@"%li", (long)indexPath.row];
         
         if ((indexPath.row+1) % 3 == 0) {
-            // MOB-5223: Default file icon handling
+            // Default file icon handling
             [cell setDefaultFileType:@"FOLDER"];
         }
         else {
@@ -189,15 +189,7 @@ static CGFloat scrollStart = kToggleCellHeight;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if ([scrollView isEqual:self.collectionView]) {
-        // check to see if we have scrolled more than 10px vertical
-        // if yes, unswipe cells
-        CGFloat scrollMove = fabsf(scrollStart - scrollView.contentOffset.y);
-        
-        if (scrollMove > (UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? 25.0f : 35.0f)) {
-            //[[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_UNSWIPE_ALL_OTHER_CELLS object:nil];
-        }
-    }
+    // TODO: Handle scroll behavior for any content that needs to hide
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset

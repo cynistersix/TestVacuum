@@ -7,13 +7,24 @@
 //
 
 #import "HTTableViewController.h"
-#import "HTGridCollectionViewController.h"
+
+NSUInteger const kSectionCount = 1;
+NSUInteger const kOpenPDFRow = 0;
+NSUInteger const kOpenTouchTestIDRow = 1;
+NSUInteger const kGridPreviewRow = 2;
+
+NSString * const kTitleName = @"TestVacuum";
+NSString * const kGeneralCellId = @"GeneralCell";
+NSString * const kGridPreviewCellId = @"GridPreviewCell";
 
 @interface HTTableViewController ()
 
 @property (nonatomic) NSMutableArray *cellActions;
 
 - (void)initCellActions;
+- (void)addCellAction:(NSString *)title withSelector:(SEL)action andTarget:(id)target atIndex:(NSUInteger)index;
+- (void)openTouchTestID;
+- (void)openInPDF;
 
 @property (nonatomic, retain) UIDocumentInteractionController *documentController;
 
@@ -35,13 +46,9 @@
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = YES;
     
-    self.title = @"TestVacuum";
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = kTitleName;
     
     [self initCellActions];
 }
@@ -57,7 +64,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return kSectionCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -69,12 +76,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *reuseId = @"GeneralCell";
+    NSString *reuseId = kGeneralCellId;
     
     UITableViewCell *cell = nil;
     
-    if (indexPath.row == 2) {
-        reuseId = @"GridPreviewCell";
+    if (indexPath.row == kGridPreviewRow) {
+        reuseId = kGridPreviewCellId;
     }
    
     cell = [tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
@@ -91,13 +98,13 @@
     return cell;
 }
 
+#pragma mark TableView delegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HTCellActionItem *cellActionItem = (HTCellActionItem *)[_cellActions objectAtIndex:indexPath.row];
     
     [cellActionItem performAction];
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -172,17 +179,34 @@
 
 - (void)initCellActions
 {
+    // This initializes the array of actions for the cells to take
+    
+    // TODO: Use NSLocalizedString for title information instead of hard coded
     self.cellActions = [NSMutableArray array];
     
-    [self.cellActions addObject:[HTCellActionItem cellActionItem:@"Open PDF Document In..."
-                                                withSelector:@selector(openInPDF)
-                                                   andTarget:self]];
-    [self.cellActions addObject:[HTCellActionItem cellActionItem:@"Open TouchTestID app..."
-                                                    withSelector:@selector(openTouchTestID)
-                                                       andTarget:self]];
-    [self.cellActions addObject:[HTCellActionItem cellActionItem:@"Grid CollectionView"
-                                                    withSelector:nil
-                                                       andTarget:nil]];
+    // Row indexes are defined at the top of this file to adjust easily
+    [self addCellAction:@"Open PDF Document In..."
+           withSelector:@selector(openInPDF)
+              andTarget:self
+                atIndex:kOpenPDFRow];
+    
+    [self addCellAction:@"Open TouchTestID app..."
+           withSelector:@selector(openTouchTestID)
+              andTarget:self
+                atIndex:kOpenTouchTestIDRow];
+    
+    [self addCellAction:@"Grid CollectionView"
+           withSelector:nil
+              andTarget:nil
+                atIndex:kGridPreviewRow];
+}
+
+- (void)addCellAction:(NSString *)title withSelector:(SEL)action andTarget:(id)target atIndex:(NSUInteger)index
+{
+    HTCellActionItem *actionItem = [HTCellActionItem cellActionItem:title
+                                                       withSelector:action
+                                                          andTarget:target];
+    [self.cellActions insertObject:actionItem atIndex:index];
 }
 
 - (void)openTouchTestID

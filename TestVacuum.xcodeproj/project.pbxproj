@@ -150,8 +150,6 @@
 				06891726191D8A68001ACF72 /* CellActions */,
 				06891700191D8890001ACF72 /* HTAppDelegate.h */,
 				06891701191D8890001ACF72 /* HTAppDelegate.m */,
-				0689172A191D8C5A001ACF72 /* HTTableViewController.h */,
-				0689172B191D8C5A001ACF72 /* HTTableViewController.m */,
 				06891709191D8890001ACF72 /* Images.xcassets */,
 				068916F8191D8890001ACF72 /* Supporting Files */,
 			);
@@ -227,18 +225,12 @@
 		06B673D4192A82DF00815E14 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0689172A191D8C5A001ACF72 /* HTTableViewController.h */,
+				0689172B191D8C5A001ACF72 /* HTTableViewController.m */,
 				06CD66BE1A06FBBA000CD419 /* GridView */,
 				06B673E6192D496D00815E14 /* Utils */,
-				06B673D5192A82E600815E14 /* Thumbnails */,
 			);
 			name = UI;
-			sourceTree = "<group>";
-		};
-		06B673D5192A82E600815E14 /* Thumbnails */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Thumbnails;
 			sourceTree = "<group>";
 		};
 		06B673E6192D496D00815E14 /* Utils */ = {
