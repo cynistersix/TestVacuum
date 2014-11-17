@@ -23,8 +23,9 @@ const float kGridCellWidthPortrait = 144.f;
 const float kGridCellHeightPortrait = 188.f;
 
 // This is now in the header
-// #define kGridListViewToggleSection 0
-#define kGridListViewItemsSection  0
+
+const NSUInteger kGridListViewItemsSection = 0;
+const NSUInteger kNumberOfSectionsSupported = 1;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -105,19 +106,14 @@ const float kGridCellHeightPortrait = 188.f;
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    // this is to handle the toggle row
-//    if (section == 0) {
-//        return 1;
-//    }
+    NSAssert (section == 0, @"Only 1 section is supported at this time");
     
     return [_items count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-//    return 2;
-    // using a header to hold the toggler
-    return 1;
+    return kNumberOfSectionsSupported;
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -126,8 +122,7 @@ const float kGridCellHeightPortrait = 188.f;
                   layout:(UICollectionViewLayout *)collectionViewLayout
 referenceSizeForHeaderInSection:(NSInteger)section
 {
-    // only one section at the moment
-    NSAssert(section == 0, @"This code does not handle multiple sections");
+    NSAssert(section == 0, @"Only 1 section is supported at this time");
     
     return CGSizeMake(self.view.frame.size.width, kToggleCellHeight);
 }
@@ -136,13 +131,7 @@ referenceSizeForHeaderInSection:(NSInteger)section
                   layout:(UICollectionViewLayout  *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-// moved this to header
-    // this is to handle the toggle row
-//    if (indexPath.section == 0) {
-//        return CGSizeMake(self.view.frame.size.width, kToggleCellHeight);
-//    }
-    
-    NSAssert(indexPath.section == 0, @"There is only 1 section for this design at the moment");
+    NSAssert(indexPath.section == 0, @"Only 1 section is supported at this time");
     
     return CGSizeMake(kGridCellWidthPortrait, kGridCellHeightPortrait);
 }
@@ -177,6 +166,8 @@ referenceSizeForHeaderInSection:(NSInteger)section
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSAssert(indexPath.section == 0, @"Only 1 section is supported at this time");
+    
     HTGridCollectionViewCell *cell = nil;
     
     cell = (HTGridCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellForFile" forIndexPath:indexPath];
@@ -184,6 +175,7 @@ referenceSizeForHeaderInSection:(NSInteger)section
     // TODO: REMOVE CellNum property and field this is TEST DATA
     cell.cellNum.text = [NSString stringWithFormat:@"%li", (long)indexPath.row];
     
+    // just some sample data to display the capabilities of this UI
     if ((indexPath.row+1) % 3 == 0) {
         // Default file icon handling
         [cell setDefaultFileType:@"FOLDER"];
@@ -234,6 +226,7 @@ static CGFloat scrollStart = kToggleCellHeight;
     [self scrollUpOrDownDetectToggleCell:scrollView];
 }
 
+// This function calculates the magnetics for hiding the header of the collection view
 - (void)scrollUpOrDownDetectToggleCell:(UIScrollView *)scrollView
 {
     if ([scrollView isEqual:self.collectionView]) {
