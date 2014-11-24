@@ -27,6 +27,11 @@
 		069523E0192FD80E00492871 /* HTGridCollectionToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069523DF192FD80E00492871 /* HTGridCollectionToggleCell.xib */; };
 		069523E5192FE12000492871 /* HTGridCollectionToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 069523E3192FE12000492871 /* HTGridCollectionToggleView.m */; };
 		069523E6192FE12000492871 /* HTGridCollectionToggleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069523E4192FE12000492871 /* HTGridCollectionToggleView.xib */; };
+		06A28A661A1AA3C20081CC55 /* HTImageZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A28A641A1AA3C20081CC55 /* HTImageZoomViewController.m */; };
+		06A28A671A1AA3C20081CC55 /* HTImageZoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A28A651A1AA3C20081CC55 /* HTImageZoomViewController.xib */; };
+		06A28A691A1AA8D80081CC55 /* 002-bentley-continental-gt3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A28A681A1AA8D80081CC55 /* 002-bentley-continental-gt3.jpg */; };
+		06A7D6991A22AD970071C499 /* 002-bentley-continental-gt3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A7D6981A22AD970071C499 /* 002-bentley-continental-gt3@2x.jpg */; };
+		06A7D69D1A22C9980071C499 /* HTZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A7D69C1A22C9980071C499 /* HTZoomScrollView.m */; };
 		06B673D9192A84B000815E14 /* HTGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B673D7192A84B000815E14 /* HTGridCollectionViewController.m */; };
 		06B673DA192A84B000815E14 /* HTGridCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B673D8192A84B000815E14 /* HTGridCollectionViewController.xib */; };
 		06B673DE192AB53900815E14 /* HTGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B673DD192AB53900815E14 /* HTGridCollectionViewCell.m */; };
@@ -77,6 +82,13 @@
 		069523E2192FE12000492871 /* HTGridCollectionToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGridCollectionToggleView.h; sourceTree = "<group>"; };
 		069523E3192FE12000492871 /* HTGridCollectionToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGridCollectionToggleView.m; sourceTree = "<group>"; };
 		069523E4192FE12000492871 /* HTGridCollectionToggleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTGridCollectionToggleView.xib; sourceTree = "<group>"; };
+		06A28A631A1AA3C20081CC55 /* HTImageZoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTImageZoomViewController.h; sourceTree = "<group>"; };
+		06A28A641A1AA3C20081CC55 /* HTImageZoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTImageZoomViewController.m; sourceTree = "<group>"; };
+		06A28A651A1AA3C20081CC55 /* HTImageZoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTImageZoomViewController.xib; sourceTree = "<group>"; };
+		06A28A681A1AA8D80081CC55 /* 002-bentley-continental-gt3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "002-bentley-continental-gt3.jpg"; sourceTree = "<group>"; };
+		06A7D6981A22AD970071C499 /* 002-bentley-continental-gt3@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "002-bentley-continental-gt3@2x.jpg"; sourceTree = "<group>"; };
+		06A7D69B1A22C9980071C499 /* HTZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTZoomScrollView.h; sourceTree = "<group>"; };
+		06A7D69C1A22C9980071C499 /* HTZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTZoomScrollView.m; sourceTree = "<group>"; };
 		06B673D6192A84B000815E14 /* HTGridCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGridCollectionViewController.h; sourceTree = "<group>"; };
 		06B673D7192A84B000815E14 /* HTGridCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGridCollectionViewController.m; sourceTree = "<group>"; };
 		06B673D8192A84B000815E14 /* HTGridCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTGridCollectionViewController.xib; sourceTree = "<group>"; };
@@ -164,6 +176,8 @@
 		068916F8191D8890001ACF72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				06A7D6981A22AD970071C499 /* 002-bentley-continental-gt3@2x.jpg */,
+				06A28A681A1AA8D80081CC55 /* 002-bentley-continental-gt3.jpg */,
 				0689172D191D92DD001ACF72 /* Git Cheat Sheet.pdf */,
 				068916F9191D8890001ACF72 /* TestVacuum-Info.plist */,
 				068916FA191D8890001ACF72 /* InfoPlist.strings */,
@@ -227,11 +241,32 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		06A28A621A1AA25D0081CC55 /* UIImageInteractions */ = {
+			isa = PBXGroup;
+			children = (
+				06A28A631A1AA3C20081CC55 /* HTImageZoomViewController.h */,
+				06A28A641A1AA3C20081CC55 /* HTImageZoomViewController.m */,
+				06A28A651A1AA3C20081CC55 /* HTImageZoomViewController.xib */,
+			);
+			name = UIImageInteractions;
+			sourceTree = "<group>";
+		};
+		06A7D69A1A22C97A0071C499 /* UIScrollViews */ = {
+			isa = PBXGroup;
+			children = (
+				06A7D69B1A22C9980071C499 /* HTZoomScrollView.h */,
+				06A7D69C1A22C9980071C499 /* HTZoomScrollView.m */,
+			);
+			name = UIScrollViews;
+			sourceTree = "<group>";
+		};
 		06B673D4192A82DF00815E14 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				0689172A191D8C5A001ACF72 /* HTTableViewController.h */,
 				0689172B191D8C5A001ACF72 /* HTTableViewController.m */,
+				06A7D69A1A22C97A0071C499 /* UIScrollViews */,
+				06A28A621A1AA25D0081CC55 /* UIImageInteractions */,
 				06CD66BE1A06FBBA000CD419 /* GridView */,
 				06B673E6192D496D00815E14 /* Utils */,
 			);
@@ -346,12 +381,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A7D6991A22AD970071C499 /* 002-bentley-continental-gt3@2x.jpg in Resources */,
 				06B673DA192A84B000815E14 /* HTGridCollectionViewController.xib in Resources */,
 				0689170A191D8890001ACF72 /* Images.xcassets in Resources */,
 				0689172F191D932B001ACF72 /* Git Cheat Sheet.pdf in Resources */,
 				069523E6192FE12000492871 /* HTGridCollectionToggleView.xib in Resources */,
 				069523E0192FD80E00492871 /* HTGridCollectionToggleCell.xib in Resources */,
 				068916FC191D8890001ACF72 /* InfoPlist.strings in Resources */,
+				06A28A671A1AA3C20081CC55 /* HTImageZoomViewController.xib in Resources */,
+				06A28A691A1AA8D80081CC55 /* 002-bentley-continental-gt3.jpg in Resources */,
 				06CD66C41A071015000CD419 /* HTGridCollectionHeaderView.xib in Resources */,
 				06B673E0192ABF5D00815E14 /* HTGridCollectionViewCell.xib in Resources */,
 				063A4917191DA17F00D8E425 /* Main.storyboard in Resources */,
@@ -381,8 +419,10 @@
 				06891729191D8A7B001ACF72 /* HTCellActionItem.m in Sources */,
 				06CD66C21A070D41000CD419 /* HTGridCollectionHeaderView.m in Sources */,
 				06B673D9192A84B000815E14 /* HTGridCollectionViewController.m in Sources */,
+				06A7D69D1A22C9980071C499 /* HTZoomScrollView.m in Sources */,
 				0689172C191D8C5A001ACF72 /* HTTableViewController.m in Sources */,
 				069523DE192FD7F000492871 /* HTGridCollectionToggleCell.m in Sources */,
+				06A28A661A1AA3C20081CC55 /* HTImageZoomViewController.m in Sources */,
 				069523E5192FE12000492871 /* HTGridCollectionToggleView.m in Sources */,
 				068916FE191D8890001ACF72 /* main.m in Sources */,
 			);
