@@ -1,3 +1,7 @@
+// This class was modified from the original
+// found here: https://github.com/nyoron/NYOBetterZoom
+
+// ORIGINAL:
 //
 //  NYOBetterZoomViewController.m
 //  NYOBetterZoom
@@ -5,17 +9,22 @@
 //  Created by Liam on 14/04/2010.
 //  Copyright Liam Jones (nyoron.co.uk) 2010. All rights reserved.
 //
+//
+//  TestVacuum
+//
+//  Created by Daniel Biran on 11/17/14.
+//  Copyright (c) 2014 Hightail. All rights reserved.
+//
 
 #import "HTZoomScrollView.h"
 #import "HTImageZoomViewController.h"
 
 @interface HTImageZoomViewController ()
 
-- (void)initScrollView;
 - (void)setMinimumZoomForCurrentFrame;
 - (void)setMinimumZoomForCurrentFrameAndAnimateIfNecessary;
 
-@property (nonatomic, strong) HTZoomScrollView *imageScrollView;
+@property (nonatomic, strong) IBOutlet HTZoomScrollView *imageScrollView;
 
 @end
 
@@ -26,17 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Set up our custom ScrollView
-    [self initScrollView];
-    
     // TODO: Use real assets
-    // Set up the ImageView that's going inside our scroll view
     UIImage *image = [UIImage imageNamed:@"002-bentley-continental-gt3.jpg"];
-    //UIImage *image = [UIImage imageNamed:@"fit-landscape.png"];
-    //UIImage *image = [UIImage imageNamed:@"fit-portrait.png"];
-    //UIImage *image = [UIImage imageNamed:@"small.png"];
-    //UIImage *image = [UIImage imageNamed:@"tall.png"];
-    //UIImage *image = [UIImage imageNamed:@"wide.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     
     // Finish the ScrollView setup
@@ -59,11 +59,6 @@
     CGFloat scale = self.imageScrollView.zoomScale;
     NSLog(@"Scale is %f", scale);
 #endif
-}
-
-// TODO: Support for rotation
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 // TODO: Support for rotation
@@ -96,18 +91,6 @@
 }
 
 #pragma mark - Private Helpers
-
-- (void)initScrollView {
-    self.imageScrollView = [[HTZoomScrollView alloc] initWithFrame:self.view.bounds];
-    [self.imageScrollView setBackgroundColor:[UIColor blackColor]];
-    [self.imageScrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
-    [self.imageScrollView setShowsVerticalScrollIndicator:NO];
-    [self.imageScrollView setShowsHorizontalScrollIndicator:NO];
-    [self.imageScrollView setBouncesZoom:YES];
-    [self.imageScrollView setDelegate:self];
-    [self.view addSubview:self.imageScrollView];
-}
-
 
 // Used to work out the minimum zoom, called when device rotates (as aspect ratio of ScrollView changes when this happens).
 // Could become part of HTScrollView but put here for now as you may not want the same behaviour I do in this regard :)

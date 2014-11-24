@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTImageZoomViewController">
             <connections>
+                <outlet property="imageScrollView" destination="jMo-id-O7S" id="LNR-fw-AZd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,22 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMo-id-O7S" customClass="HTZoomScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Zhy-Mu-XCE"/>
+                    </connections>
+                </scrollView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jMo-id-O7S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0jT-2w-Csv"/>
+                <constraint firstAttribute="bottom" secondItem="jMo-id-O7S" secondAttribute="bottom" id="3no-jZ-3AJ"/>
+                <constraint firstAttribute="trailing" secondItem="jMo-id-O7S" secondAttribute="trailing" id="4n7-1S-cyb"/>
+                <constraint firstItem="jMo-id-O7S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AVh-ln-CeI"/>
+            </constraints>
         </view>
         <pinchGestureRecognizer id="50C-NZ-vtH">
             <connections>
