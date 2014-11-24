@@ -9,7 +9,8 @@
 //  Created by Liam on 14/04/2010.
 //  Copyright 2010 Liam Jones (nyoron.co.uk). All rights reserved.
 //
-//
+// MODIFIED:
+//  HTZoomScrollView.h
 //  TestVacuum
 //
 //  Created by Daniel Biran on 11/17/14.
@@ -24,5 +25,8 @@
 
 - (id)initWithChildView:(UIView *)aChildView;
 - (id)initWithFrame:(CGRect)aFrame andChildView:(UIView *)aChildView;
+
+- (void)setMinimumZoomForCurrentFrameAndAnimateIfNecessary;
+- (void)setMinimumZoomForCurrentFrame;
 
 @end

@@ -9,7 +9,8 @@
 //  Created by Liam on 14/04/2010.
 //  Copyright 2010 Liam Jones (nyoron.co.uk). All rights reserved.
 //
-//
+// MODIFIED:
+//  HTZoomScrollView.m
 //  TestVacuum
 //
 //  Created by Daniel Biran on 11/17/14.
@@ -50,8 +51,25 @@
     self.childView = nil;
 }
 
+#pragma mark - Public Methods
+
+- (void)setMinimumZoomForCurrentFrameAndAnimateIfNecessary {
+    BOOL wasAtMinimumZoom = NO;
+    
+    if(self.zoomScale == self.minimumZoomScale) {
+        wasAtMinimumZoom = YES;
+    }
+    
+    [self setMinimumZoomForCurrentFrame];
+    
+    if(wasAtMinimumZoom || self.zoomScale < self.minimumZoomScale) {
+        [self setZoomScale:self.minimumZoomScale animated:YES];
+    }
+}
+
 #pragma mark - Accessors
 
+// This is the bread and butter to why this works for zooming the image/subview
 -(void)setChildView:(UIView *)aChildView {
     @synchronized(self) {
         if (_childView != aChildView) {
@@ -88,13 +106,17 @@
 
 #pragma mark - WARNING DEVELOPERS
 
+- (void)setMinimumZoomForCurrentFrame {
+    // You must override this function in your subclass for zooming
+    NSAssert(NO, @"NOT SUPPORTED TO DIRECTLY CALL THIS");
+}
+
 // Warn the programmer if they're using regular subview methods (this subclass is only designed for zooming a single view)
 #ifdef DEBUG
 #define SubviewMethodWarning() NSLog(@"%s warning - this class is only designed to work with a single subview via initWithFrame:andChildView: and/or the childView accessors. I won't stop you from calling this method but make sure you know the implications of what you're doing. ;)", __PRETTY_FUNCTION__);
 #else
 #define SubviewMethodWarning()
 #endif
-
 
 - (void)addSubview:(UIView *)view {
     SubviewMethodWarning();
