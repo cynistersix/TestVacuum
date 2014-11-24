@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HTImageZoomViewController : UIViewController<UIGestureRecognizerDelegate, UIScrollViewDelegate>
+// TODO: UIGestureRecognizerDelegate
+@interface HTImageZoomViewController : UIViewController <UIScrollViewDelegate /*, UIGestureRecognizerDelegate*/ > {
+    
+}
 
 @end
