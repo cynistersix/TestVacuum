@@ -84,7 +84,9 @@
 
 #pragma mark - UIScrollView
 
-// Rather than the default behaviour of a {0,0} offset when an image is too small to fill the UIScrollView we're going to return an offset that centers the image in the UIScrollView instead.
+// Rather than the default behaviour of a {0,0} offset when an image is too small
+// to fill the UIScrollView we're going to return an offset that centers the image
+// in the UIScrollView instead.
 - (void)setContentOffset:(CGPoint)anOffset {
     if(self.childView != nil) {
         CGSize zoomViewSize = self.childView.frame.size;
@@ -106,6 +108,9 @@
 
 #pragma mark - WARNING DEVELOPERS
 
+// This data needs to be setup/adjusted when the view initially appears in the
+// viewWillAppear: of the controller and when the view rotates in
+// didRotateFromInterfaceOrientation: of the controller.
 - (void)setMinimumZoomForCurrentFrame {
     // You must override this function in your subclass for zooming
     NSAssert(NO, @"NOT SUPPORTED TO DIRECTLY CALL THIS");
