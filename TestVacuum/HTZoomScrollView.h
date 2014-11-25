@@ -22,7 +22,7 @@
 @interface HTZoomScrollView : UIScrollView
 
 // This may not need to be an IBOutlet
-@property (nonatomic, strong) IBOutlet UIView *childView;
+@property (nonatomic, weak) IBOutlet UIView *childView;
 
 - (id)initWithChildView:(UIView *)aChildView;
 - (id)initWithFrame:(CGRect)aFrame andChildView:(UIView *)aChildView;

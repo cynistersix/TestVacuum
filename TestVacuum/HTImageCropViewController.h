@@ -7,7 +7,8 @@
 //
 
 #import "HTImageZoomViewController.h"
+#import "HTZoomScrollCropImageView.h"
 
-@interface HTImageCropViewController : HTImageZoomViewController
+@interface HTImageCropViewController : HTImageZoomViewController<HTZoomScrollCropImageViewDelegate>
 
 @end

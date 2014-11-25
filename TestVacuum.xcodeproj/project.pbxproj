@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		063A4917191DA17F00D8E425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063A4916191DA17F00D8E425 /* Main.storyboard */; };
 		066F5A3C1A2406C200C63B8D /* HTCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 066F5A3B1A2406C200C63B8D /* HTCropView.m */; };
+		066F5A401A250F4700C63B8D /* HTZoomScrollCropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 066F5A3F1A250F4700C63B8D /* HTZoomScrollCropImageView.m */; };
 		068916F2191D8890001ACF72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068916F1191D8890001ACF72 /* Foundation.framework */; };
 		068916F4191D8890001ACF72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068916F3191D8890001ACF72 /* CoreGraphics.framework */; };
 		068916F6191D8890001ACF72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068916F5191D8890001ACF72 /* UIKit.framework */; };
@@ -61,6 +62,8 @@
 		063A4916191DA17F00D8E425 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		066F5A3A1A2406C200C63B8D /* HTCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCropView.h; sourceTree = "<group>"; };
 		066F5A3B1A2406C200C63B8D /* HTCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCropView.m; sourceTree = "<group>"; };
+		066F5A3E1A250F4700C63B8D /* HTZoomScrollCropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTZoomScrollCropImageView.h; sourceTree = "<group>"; };
+		066F5A3F1A250F4700C63B8D /* HTZoomScrollCropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTZoomScrollCropImageView.m; sourceTree = "<group>"; };
 		068916EE191D8890001ACF72 /* TestVacuum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestVacuum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068916F1191D8890001ACF72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		068916F3191D8890001ACF72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -281,6 +284,8 @@
 				06A7D69C1A22C9980071C499 /* HTZoomScrollView.m */,
 				06A7D6A51A23E9650071C499 /* HTZoomScrollImageView.h */,
 				06A7D6A61A23E9650071C499 /* HTZoomScrollImageView.m */,
+				066F5A3E1A250F4700C63B8D /* HTZoomScrollCropImageView.h */,
+				066F5A3F1A250F4700C63B8D /* HTZoomScrollCropImageView.m */,
 			);
 			name = UIScrollViews;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 				06891729191D8A7B001ACF72 /* HTCellActionItem.m in Sources */,
 				06CD66C21A070D41000CD419 /* HTGridCollectionHeaderView.m in Sources */,
 				06B673D9192A84B000815E14 /* HTGridCollectionViewController.m in Sources */,
+				066F5A401A250F4700C63B8D /* HTZoomScrollCropImageView.m in Sources */,
 				06A7D69D1A22C9980071C499 /* HTZoomScrollView.m in Sources */,
 				0689172C191D8C5A001ACF72 /* HTTableViewController.m in Sources */,
 				069523DE192FD7F000492871 /* HTGridCollectionToggleCell.m in Sources */,

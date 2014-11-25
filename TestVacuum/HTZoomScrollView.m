@@ -47,10 +47,6 @@
     return self;
 }
 
-- (void)dealloc {
-    self.childView = nil;
-}
-
 #pragma mark - Public Methods
 
 - (void)setMinimumZoomForCurrentFrameAndAnimateIfNecessary {

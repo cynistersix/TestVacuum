@@ -10,6 +10,20 @@
 
 @implementation HTZoomScrollImageView
 
+#pragma mark - Accessors
+
+- (UIImage *)image {
+    UIImage *retVal = nil;
+    
+    if ([self.childView isKindOfClass:[UIImageView class]]) {
+        retVal = [(UIImageView *)self.childView image];
+    }
+    
+    return retVal;
+}
+
+#pragma mark - Public Methods
+
 - (void)setupImage {
     // TODO: Use real assets
     UIImage *image = [UIImage imageNamed:@"002-bentley-continental-gt3.jpg"];

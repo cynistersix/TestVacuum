@@ -12,4 +12,6 @@
 
 - (void)setupImage;
 
+@property (nonatomic, readonly) UIImage *image;
+
 @end

@@ -22,6 +22,11 @@
     
     // set the crop window size
     self.cropWindow.frame = self.imageScrollView.frame;
+    
+    // This places the image in the center of the crop window so it fits
+    // where the edges hang outside the crop area
+    self.imageScrollView.zoomScale = MIN(self.cropWindow.height/self.imageScrollView.image.size.height,
+                                         self.cropWindow.width/self.imageScrollView.image.size.width);
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -53,6 +58,12 @@
     }
     
     [scrollView setContentOffset:offset animated:YES];
+}
+
+#pragma mark - HTZoomScrollCropImageViewDelegate
+
+- (CGSize)htZoomScrollCropImageViewNeedsCropSize:(HTZoomScrollCropImageView *)zoomScrollCropImageView {
+    return CGSizeMake(self.cropWindow.width, self.cropWindow.width);
 }
 
 @end
