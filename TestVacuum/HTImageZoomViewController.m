@@ -17,14 +17,7 @@
 //  Copyright (c) 2014 Hightail. All rights reserved.
 //
 
-#import "HTZoomScrollImageView.h"
 #import "HTImageZoomViewController.h"
-
-@interface HTImageZoomViewController ()
-
-@property (nonatomic, strong) IBOutlet HTZoomScrollImageView *imageScrollView;
-
-@end
 
 @implementation HTImageZoomViewController
 
@@ -105,8 +98,8 @@
     // TODO: Remove this logging?
 #ifdef DEBUG
     UIView *theView = [scrollView childView];
-    NSLog(@"view frame: %@", NSStringFromCGRect(theView.frame));
-    NSLog(@"view bounds: %@", NSStringFromCGRect(theView.bounds));
+    NSLog(@"%s - view frame: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(theView.frame));
+    NSLog(@"%s - view bounds: %@", __PRETTY_FUNCTION__, NSStringFromCGRect(theView.bounds));
 #endif
 }
 

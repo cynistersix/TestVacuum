@@ -8,17 +8,20 @@
 
 #import "HTTableViewController.h"
 #import "HTImageZoomViewController.h"
+#import "HTImageCropViewController.h"
 
 NSUInteger const kSectionCount = 1;
 NSUInteger const kOpenPDFRow = 0;
 NSUInteger const kOpenTouchTestIDRow = 1;
 NSUInteger const kGridPreviewRow = 2;
 NSUInteger const kImageZoomRow = 3;
+NSUInteger const kImageCropRow = 4;
 
 NSString * const kTitleName = @"TestVacuum";
 NSString * const kGeneralCellId = @"GeneralCell";
 NSString * const kGridPreviewCellId = @"GridPreviewCell";
 NSString * const kImageZoomCellId = @"ImageZoomCell";
+NSString * const kImageCropCellId = @"ImageCropCell";
 
 @interface HTTableViewController ()
 
@@ -113,6 +116,11 @@ NSString * const kImageZoomCellId = @"ImageZoomCell";
         case kImageZoomRow:
         {
             return kImageZoomCellId;
+            break;
+        }
+        case kImageCropRow:
+        {
+            return kImageCropCellId;
             break;
         }
         default:
@@ -231,6 +239,11 @@ NSString * const kImageZoomCellId = @"ImageZoomCell";
            withSelector:@selector(pushZoomController)
               andTarget:self
                 atIndex:kImageZoomRow];
+    
+    [self addCellAction:@"Crop Image"
+           withSelector:@selector(pushCropController)
+              andTarget:self
+                atIndex:kImageCropRow];
 }
 
 - (void)addCellAction:(NSString *)title withSelector:(SEL)action andTarget:(id)target atIndex:(NSUInteger)index
@@ -276,6 +289,13 @@ NSString * const kImageZoomCellId = @"ImageZoomCell";
 - (void)pushZoomController
 {
     HTImageZoomViewController *controller = [[HTImageZoomViewController alloc] initWithNibName:@"HTImageZoomViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)pushCropController
+{
+    HTImageCropViewController *controller = [[HTImageCropViewController alloc] initWithNibName:@"HTImageCropViewController" bundle:nil];
     
     [self.navigationController pushViewController:controller animated:YES];
 }

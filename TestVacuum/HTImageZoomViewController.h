@@ -19,9 +19,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HTZoomScrollImageView.h"
+
 // TODO: UIGestureRecognizerDelegate
 @interface HTImageZoomViewController : UIViewController <UIScrollViewDelegate /*, UIGestureRecognizerDelegate*/ > {
     
 }
+
+@property (nonatomic, strong) IBOutlet HTZoomScrollImageView *imageScrollView;
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		063A4917191DA17F00D8E425 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 063A4916191DA17F00D8E425 /* Main.storyboard */; };
+		066F5A3C1A2406C200C63B8D /* HTCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 066F5A3B1A2406C200C63B8D /* HTCropView.m */; };
 		068916F2191D8890001ACF72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068916F1191D8890001ACF72 /* Foundation.framework */; };
 		068916F4191D8890001ACF72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068916F3191D8890001ACF72 /* CoreGraphics.framework */; };
 		068916F6191D8890001ACF72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068916F5191D8890001ACF72 /* UIKit.framework */; };
@@ -33,6 +34,8 @@
 		06A7D6991A22AD970071C499 /* 002-bentley-continental-gt3@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06A7D6981A22AD970071C499 /* 002-bentley-continental-gt3@2x.jpg */; };
 		06A7D69D1A22C9980071C499 /* HTZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A7D69C1A22C9980071C499 /* HTZoomScrollView.m */; };
 		06A7D6A71A23E9650071C499 /* HTZoomScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A7D6A61A23E9650071C499 /* HTZoomScrollImageView.m */; };
+		06A7D6AB1A23F1880071C499 /* HTImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A7D6A91A23F1880071C499 /* HTImageCropViewController.m */; };
+		06A7D6AC1A23F1880071C499 /* HTImageCropViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A7D6AA1A23F1880071C499 /* HTImageCropViewController.xib */; };
 		06B673D9192A84B000815E14 /* HTGridCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B673D7192A84B000815E14 /* HTGridCollectionViewController.m */; };
 		06B673DA192A84B000815E14 /* HTGridCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B673D8192A84B000815E14 /* HTGridCollectionViewController.xib */; };
 		06B673DE192AB53900815E14 /* HTGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B673DD192AB53900815E14 /* HTGridCollectionViewCell.m */; };
@@ -56,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		063A4916191DA17F00D8E425 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		066F5A3A1A2406C200C63B8D /* HTCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCropView.h; sourceTree = "<group>"; };
+		066F5A3B1A2406C200C63B8D /* HTCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCropView.m; sourceTree = "<group>"; };
 		068916EE191D8890001ACF72 /* TestVacuum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestVacuum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068916F1191D8890001ACF72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		068916F3191D8890001ACF72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -92,6 +97,9 @@
 		06A7D69C1A22C9980071C499 /* HTZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTZoomScrollView.m; sourceTree = "<group>"; };
 		06A7D6A51A23E9650071C499 /* HTZoomScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTZoomScrollImageView.h; sourceTree = "<group>"; };
 		06A7D6A61A23E9650071C499 /* HTZoomScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTZoomScrollImageView.m; sourceTree = "<group>"; };
+		06A7D6A81A23F1880071C499 /* HTImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTImageCropViewController.h; sourceTree = "<group>"; };
+		06A7D6A91A23F1880071C499 /* HTImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTImageCropViewController.m; sourceTree = "<group>"; };
+		06A7D6AA1A23F1880071C499 /* HTImageCropViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTImageCropViewController.xib; sourceTree = "<group>"; };
 		06B673D6192A84B000815E14 /* HTGridCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTGridCollectionViewController.h; sourceTree = "<group>"; };
 		06B673D7192A84B000815E14 /* HTGridCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTGridCollectionViewController.m; sourceTree = "<group>"; };
 		06B673D8192A84B000815E14 /* HTGridCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTGridCollectionViewController.xib; sourceTree = "<group>"; };
@@ -132,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		066F5A3D1A2406C800C63B8D /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				066F5A3A1A2406C200C63B8D /* HTCropView.h */,
+				066F5A3B1A2406C200C63B8D /* HTCropView.m */,
+			);
+			name = UIViews;
+			sourceTree = "<group>";
+		};
 		068916E5191D8890001ACF72 = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +267,9 @@
 				06A28A631A1AA3C20081CC55 /* HTImageZoomViewController.h */,
 				06A28A641A1AA3C20081CC55 /* HTImageZoomViewController.m */,
 				06A28A651A1AA3C20081CC55 /* HTImageZoomViewController.xib */,
+				06A7D6A81A23F1880071C499 /* HTImageCropViewController.h */,
+				06A7D6A91A23F1880071C499 /* HTImageCropViewController.m */,
+				06A7D6AA1A23F1880071C499 /* HTImageCropViewController.xib */,
 			);
 			name = UIImageInteractions;
 			sourceTree = "<group>";
@@ -271,6 +291,7 @@
 				0689172A191D8C5A001ACF72 /* HTTableViewController.h */,
 				0689172B191D8C5A001ACF72 /* HTTableViewController.m */,
 				06A7D69A1A22C97A0071C499 /* UIScrollViews */,
+				066F5A3D1A2406C800C63B8D /* UIViews */,
 				06A28A621A1AA25D0081CC55 /* UIImageInteractions */,
 				06CD66BE1A06FBBA000CD419 /* GridView */,
 				06B673E6192D496D00815E14 /* Utils */,
@@ -394,6 +415,7 @@
 				069523E0192FD80E00492871 /* HTGridCollectionToggleCell.xib in Resources */,
 				068916FC191D8890001ACF72 /* InfoPlist.strings in Resources */,
 				06A28A671A1AA3C20081CC55 /* HTImageZoomViewController.xib in Resources */,
+				06A7D6AC1A23F1880071C499 /* HTImageCropViewController.xib in Resources */,
 				06A28A691A1AA8D80081CC55 /* 002-bentley-continental-gt3.jpg in Resources */,
 				06CD66C41A071015000CD419 /* HTGridCollectionHeaderView.xib in Resources */,
 				06B673E0192ABF5D00815E14 /* HTGridCollectionViewCell.xib in Resources */,
@@ -419,9 +441,11 @@
 			files = (
 				06B673DE192AB53900815E14 /* HTGridCollectionViewCell.m in Sources */,
 				06891702191D8890001ACF72 /* HTAppDelegate.m in Sources */,
+				066F5A3C1A2406C200C63B8D /* HTCropView.m in Sources */,
 				06A7D6A71A23E9650071C499 /* HTZoomScrollImageView.m in Sources */,
 				06B673EC192D5DB800815E14 /* HTGridCollectionImageView.m in Sources */,
 				06B673E9192D501900815E14 /* InnerShadowUIView.m in Sources */,
+				06A7D6AB1A23F1880071C499 /* HTImageCropViewController.m in Sources */,
 				06891729191D8A7B001ACF72 /* HTCellActionItem.m in Sources */,
 				06CD66C21A070D41000CD419 /* HTGridCollectionHeaderView.m in Sources */,
 				06B673D9192A84B000815E14 /* HTGridCollectionViewController.m in Sources */,
