@@ -9,7 +9,7 @@
 #import "HTImageZoomViewController.h"
 #import "HTZoomScrollCropImageView.h"
 
-@interface HTImageCropViewController : UIViewController<UIScrollViewDelegate>
+@interface HTImageCropViewController : HTImageZoomViewController<UIScrollViewDelegate>
 
 @property (nonatomic) IBOutlet HTZoomScrollCropImageView *imageScrollView;
 

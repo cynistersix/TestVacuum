@@ -16,9 +16,13 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMo-id-O7S" customClass="HTZoomScrollImageView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMo-id-O7S" customClass="HTZoomScrollImageView">
+                    <rect key="frame" x="200" y="200" width="200" height="200"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="eod-h4-d7B"/>
+                        <constraint firstAttribute="height" constant="200" id="uRE-2Y-udu"/>
+                    </constraints>
                     <connections>
                         <outlet property="delegate" destination="-1" id="Zhy-Mu-XCE"/>
                     </connections>
@@ -26,10 +30,8 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="jMo-id-O7S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0jT-2w-Csv"/>
-                <constraint firstAttribute="bottom" secondItem="jMo-id-O7S" secondAttribute="bottom" id="3no-jZ-3AJ"/>
-                <constraint firstAttribute="trailing" secondItem="jMo-id-O7S" secondAttribute="trailing" id="4n7-1S-cyb"/>
-                <constraint firstItem="jMo-id-O7S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AVh-ln-CeI"/>
+                <constraint firstItem="jMo-id-O7S" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Inb-y0-AVb"/>
+                <constraint firstItem="jMo-id-O7S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KHJ-ed-Ymy"/>
             </constraints>
         </view>
         <pinchGestureRecognizer id="50C-NZ-vtH">

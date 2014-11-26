@@ -17,10 +17,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xm-OY-pEe" customClass="HTZoomScrollCropImageView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xm-OY-pEe" customClass="HTZoomScrollCropImageView">
+                    <rect key="frame" x="60" y="184" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="6gW-UY-JrQ"/>
+                        <constraint firstAttribute="height" constant="200" id="XO3-5v-iBO"/>
+                    </constraints>
                     <connections>
-                        <outlet property="cropWindow" destination="WPM-wb-VfP" id="vqn-We-0zE"/>
+                        <outlet property="cropWindow" destination="WPM-wb-VfP" id="LOp-7d-YAP"/>
                         <outlet property="delegate" destination="-1" id="i1R-u4-fGT"/>
                     </connections>
                 </scrollView>
@@ -31,14 +35,12 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="9xm-OY-pEe" secondAttribute="trailing" id="1XI-8x-LRP"/>
-                <constraint firstItem="WPM-wb-VfP" firstAttribute="top" secondItem="9xm-OY-pEe" secondAttribute="top" id="M0W-3C-RcP"/>
-                <constraint firstItem="WPM-wb-VfP" firstAttribute="bottom" secondItem="9xm-OY-pEe" secondAttribute="bottom" id="SUo-5L-beq"/>
-                <constraint firstItem="9xm-OY-pEe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c8T-Mg-Tnc"/>
-                <constraint firstItem="WPM-wb-VfP" firstAttribute="leading" secondItem="9xm-OY-pEe" secondAttribute="leading" id="eYU-Ma-JSG"/>
-                <constraint firstItem="WPM-wb-VfP" firstAttribute="trailing" secondItem="9xm-OY-pEe" secondAttribute="trailing" id="ryU-9k-NwI"/>
-                <constraint firstItem="9xm-OY-pEe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="v3N-vo-nMB"/>
-                <constraint firstAttribute="bottom" secondItem="9xm-OY-pEe" secondAttribute="bottom" id="xsM-OS-r0O"/>
+                <constraint firstItem="WPM-wb-VfP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E3P-xg-tqB"/>
+                <constraint firstAttribute="bottom" secondItem="WPM-wb-VfP" secondAttribute="bottom" id="G44-uy-HCv"/>
+                <constraint firstAttribute="trailing" secondItem="WPM-wb-VfP" secondAttribute="trailing" id="GdP-Yw-f1Z"/>
+                <constraint firstItem="9xm-OY-pEe" firstAttribute="centerX" secondItem="WPM-wb-VfP" secondAttribute="centerX" id="Hmk-SG-UEi"/>
+                <constraint firstItem="9xm-OY-pEe" firstAttribute="centerY" secondItem="WPM-wb-VfP" secondAttribute="centerY" id="THM-y3-lVO"/>
+                <constraint firstItem="WPM-wb-VfP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="s8m-Tq-Tn6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
