@@ -12,11 +12,11 @@
 
 #pragma mark - Accessors
 
-- (UIImage *)image {
-    UIImage *retVal = nil;
+- (UIImageView *)imageView {
+    UIImageView *retVal = nil;
     
     if ([self.childView isKindOfClass:[UIImageView class]]) {
-        retVal = [(UIImageView *)self.childView image];
+        retVal = (UIImageView *)self.childView;
     }
     
     return retVal;

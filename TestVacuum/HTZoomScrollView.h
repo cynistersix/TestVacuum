@@ -30,4 +30,6 @@
 - (void)setMinimumZoomForCurrentFrameAndAnimateIfNecessary;
 - (void)setMinimumZoomForCurrentFrame;
 
+- (void)setSuperContentOffset:(CGPoint)anOffset;
+
 @end

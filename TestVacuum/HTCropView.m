@@ -42,10 +42,10 @@
 }
 
 - (void)initCropMask {
-    [self addMaskToLayer];
     self.cropMaskColor = self.backgroundColor;
-    self.width = 200;
-    self.height = 200;
+    self.cropWidth = 200;
+    self.cropHeight = 200;
+    [self addMaskToLayer];
 }
 
 - (void)addMaskToLayer {
@@ -54,11 +54,11 @@
     maskLayer.frame = bounds;
     maskLayer.fillColor = self.cropMaskColor.CGColor;
     
-    CGRect const cropRect = CGRectMake(CGRectGetMidX(bounds) - self.height/2.f,
-                                         CGRectGetMidY(bounds) - self.width/2.f,
-                                         self.width, self.height);
+    _cropRect = CGRectMake(CGRectGetMidX(bounds) - self.cropHeight/2.f,
+                          CGRectGetMidY(bounds) - self.cropWidth/2.f,
+                          self.cropWidth, self.cropHeight);
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithRect:cropRect];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:_cropRect];
     [path appendPath:[UIBezierPath bezierPathWithRect:bounds]];
     
     maskLayer.path = path.CGPath;

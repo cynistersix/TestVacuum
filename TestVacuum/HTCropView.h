@@ -10,8 +10,9 @@
 
 @interface HTCropView : UIView
 
-@property (nonatomic) CGFloat height;
-@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat cropHeight;
+@property (nonatomic) CGFloat cropWidth;
 @property (nonatomic, strong) UIColor *cropMaskColor;
+@property (nonatomic,readonly) CGRect cropRect;
 
 @end

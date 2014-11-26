@@ -99,9 +99,12 @@
         }
     }
     
-    super.contentOffset = anOffset;
+    [self setSuperContentOffset:anOffset];
 }
 
+- (void)setSuperContentOffset:(CGPoint)anOffset {
+    super.contentOffset = anOffset;
+}
 #pragma mark - WARNING DEVELOPERS
 
 // This data needs to be setup/adjusted when the view initially appears in the
@@ -113,7 +116,7 @@
 }
 
 // Warn the programmer if they're using regular subview methods (this subclass is only designed for zooming a single view)
-#ifdef DEBUG
+#if defined(DEBUG) && defined(WARNSUBVIEW)
 #define SubviewMethodWarning() NSLog(@"%s warning - this class is only designed to work with a single subview via initWithFrame:andChildView: and/or the childView accessors. I won't stop you from calling this method but make sure you know the implications of what you're doing. ;)", __PRETTY_FUNCTION__);
 #else
 #define SubviewMethodWarning()

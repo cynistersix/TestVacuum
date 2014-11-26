@@ -7,17 +7,11 @@
 //
 
 #import "HTZoomScrollImageView.h"
-
-@protocol HTZoomScrollCropImageViewDelegate;
+#import "HTCropView.h"
 
 @interface HTZoomScrollCropImageView : HTZoomScrollImageView
 
-@property (nonatomic) id<HTZoomScrollCropImageViewDelegate> delegate;
-
-@end
-
-@protocol HTZoomScrollCropImageViewDelegate <NSObject>
-
-- (CGSize)htZoomScrollCropImageViewNeedsCropSize:(HTZoomScrollCropImageView *)zoomScrollCropImageView;
+// TODO: Add this in code
+@property (nonatomic) IBOutlet HTCropView *cropWindow;
 
 @end

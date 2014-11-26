@@ -14,17 +14,18 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xm-OY-pEe" customClass="HTZoomScrollCropImageView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <connections>
+                        <outlet property="cropWindow" destination="WPM-wb-VfP" id="vqn-We-0zE"/>
                         <outlet property="delegate" destination="-1" id="i1R-u4-fGT"/>
                     </connections>
                 </scrollView>
                 <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPM-wb-VfP" customClass="HTCropView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
@@ -39,6 +40,7 @@
                 <constraint firstItem="9xm-OY-pEe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="v3N-vo-nMB"/>
                 <constraint firstAttribute="bottom" secondItem="9xm-OY-pEe" secondAttribute="bottom" id="xsM-OS-r0O"/>
             </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
 </document>
