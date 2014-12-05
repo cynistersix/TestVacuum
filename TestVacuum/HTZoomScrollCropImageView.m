@@ -17,6 +17,22 @@
 
 @implementation HTZoomScrollCropImageView
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        // create view
+    }
+    
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        // create view
+    }
+    
+    return self;
+}
+
 #pragma mark - UIScrollView
 
 - (void)setZoomScale:(CGFloat)scale animated:(BOOL)animated {
@@ -42,26 +58,23 @@
     });
 }
 
-// Rather than the default behaviour of a {0,0} offset when an image is too small
-// to fill the UIScrollView we're going to return an offset that centers the image
-// in the UIScrollView instead.
-- (void)setContentOffset:(CGPoint)anOffset {
-    if(self.childView != nil) {
-        CGSize zoomViewSize = self.childView.frame.size;
-        CGSize scrollViewSize = self.bounds.size;
-        
-        if(zoomViewSize.width < scrollViewSize.width) {
-            // divide by 2 to center it
-            anOffset.x = -(scrollViewSize.width - zoomViewSize.width) / 2.0;
-        }
-        
-        if(zoomViewSize.height < scrollViewSize.height) {
-            // divide by 2 to center it
-            anOffset.y = -(scrollViewSize.height - zoomViewSize.height) / 2.0;
-        }
-    }
+// Used to work out the minimum zoom, called when device rotates (as aspect ratio of ScrollView changes when this happens).
+// Could become part of HTScrollView but put here for now as you may not want the same behaviour I do in this regard :)
+- (void)setMinimumZoomForCurrentFrame {
+    NSAssert([self.childView isKindOfClass:[UIImageView class]], @"Child must be of kind UIImageView to use this class for zooming");
     
-    [self setSuperContentOffset:anOffset];
+    UIImageView *imageView = (UIImageView *)[self childView];
+    
+    // Work out a nice minimum zoom for the image - if it's smaller than the ScrollView then 1.0x zoom otherwise a scaled down zoom so it fits in the ScrollView entirely when zoomed out
+    CGSize imageSize = imageView.image.size;
+    CGSize scrollSize = self.frame.size;
+    CGFloat widthRatio = scrollSize.width / imageSize.width;
+    CGFloat heightRatio = scrollSize.height / imageSize.height;
+    
+    // if you set minimum to 1 the large images will show full scale which is wrong.
+    CGFloat minimumZoom = (widthRatio > heightRatio) ? heightRatio : widthRatio;
+    
+    self.minimumZoomScale = minimumZoom;
 }
 
 @end
