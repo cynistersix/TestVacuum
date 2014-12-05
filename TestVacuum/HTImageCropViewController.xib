@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTImageCropViewController">
+            <connections>
+                <outlet property="cropWindow" destination="WPM-wb-VfP" id="9Z6-Ja-uiK"/>
+                <outlet property="imageScrollView" destination="9xm-OY-pEe" id="PRw-2W-KPH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xm-OY-pEe" customClass="HTZoomScrollCropImageView">
+                    <rect key="frame" x="60" y="184" width="200" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="6gW-UY-JrQ"/>
+                        <constraint firstAttribute="height" constant="200" id="XO3-5v-iBO"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="cropWindow" destination="WPM-wb-VfP" id="LOp-7d-YAP"/>
+                        <outlet property="delegate" destination="-1" id="i1R-u4-fGT"/>
+                    </connections>
+                </scrollView>
+                <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPM-wb-VfP" customClass="HTCropView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="calibratedRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="WPM-wb-VfP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="E3P-xg-tqB"/>
+                <constraint firstAttribute="bottom" secondItem="WPM-wb-VfP" secondAttribute="bottom" id="G44-uy-HCv"/>
+                <constraint firstAttribute="trailing" secondItem="WPM-wb-VfP" secondAttribute="trailing" id="GdP-Yw-f1Z"/>
+                <constraint firstItem="9xm-OY-pEe" firstAttribute="centerX" secondItem="WPM-wb-VfP" secondAttribute="centerX" id="Hmk-SG-UEi"/>
+                <constraint firstItem="9xm-OY-pEe" firstAttribute="centerY" secondItem="WPM-wb-VfP" secondAttribute="centerY" id="THM-y3-lVO"/>
+                <constraint firstItem="WPM-wb-VfP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="s8m-Tq-Tn6"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

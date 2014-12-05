@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTImageZoomViewController">
+            <connections>
+                <outlet property="imageScrollView" destination="jMo-id-O7S" id="LNR-fw-AZd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMo-id-O7S" customClass="HTZoomScrollImageView">
+                    <rect key="frame" x="200" y="200" width="200" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="eod-h4-d7B"/>
+                        <constraint firstAttribute="height" constant="200" id="uRE-2Y-udu"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Zhy-Mu-XCE"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jMo-id-O7S" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Inb-y0-AVb"/>
+                <constraint firstItem="jMo-id-O7S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KHJ-ed-Ymy"/>
+            </constraints>
+        </view>
+        <pinchGestureRecognizer id="50C-NZ-vtH">
+            <connections>
+                <action selector="gestureRecognizerPinchZoom:" destination="-1" id="dhQ-FM-NyQ"/>
+                <outlet property="delegate" destination="-1" id="XMu-An-srG"/>
+            </connections>
+        </pinchGestureRecognizer>
+        <tapGestureRecognizer numberOfTapsRequired="2" id="qxP-uO-try">
+            <connections>
+                <action selector="gestureRecognizerTwoTaps:" destination="-1" id="5q1-J2-QXg"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
