@@ -1,6 +1,40 @@
-TestVacuum.xcodeproj/project.xcworkspace/xcshareddata/TestVacuum.xccheckout
-TestVacuum.xcodeproj/project.xcworkspace/xcuserdata/daniel.biran.xcuserdatad/UserInterfaceState.xcuserstate
-TestVacuum.xcodeproj/project.xcworkspace/xcuserdata/daniel.biran.xcuserdatad/WorkspaceSettings.xcsettings
 TestVacuum.xcodeproj/xcuserdata/daniel.biran.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 TestVacuum.xcodeproj/xcuserdata/daniel.biran.xcuserdatad/xcschemes/TestVacuum.xcscheme
 TestVacuum.xcodeproj/xcuserdata/daniel.biran.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/MMDrawerController/LICENSE
+Pods/Manifest.lock
+Pods/Headers/Build/MMDrawerController/MMDrawerBarButtonItem.h
+Pods/Headers/Public/MMDrawerController/MMDrawerBarButtonItem.h
+Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.h
+Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.m
+Pods/Headers/Build/MMDrawerController/MMDrawerController+Subclass.h
+Pods/Headers/Public/MMDrawerController/MMDrawerController+Subclass.h
+Pods/MMDrawerController/MMDrawerController/MMDrawerController+Subclass.h
+Pods/Headers/Build/MMDrawerController/MMDrawerController.h
+Pods/Headers/Public/MMDrawerController/MMDrawerController.h
+Pods/MMDrawerController/MMDrawerController/MMDrawerController.h
+Pods/MMDrawerController/MMDrawerController/MMDrawerController.m
+Pods/Headers/Build/MMDrawerController/MMDrawerVisualState.h
+Pods/Headers/Public/MMDrawerController/MMDrawerVisualState.h
+Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.h
+Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m
+Pods/Target Support Files/Pods/Pods-acknowledgements.markdown
+Pods/Target Support Files/Pods/Pods-acknowledgements.plist
+Pods/Target Support Files/Pods/Pods-dummy.m
+Pods/Target Support Files/Pods/Pods-environment.h
+Pods/Target Support Files/Pods-MMDrawerController/Pods-MMDrawerController-dummy.m
+Pods/Target Support Files/Pods-MMDrawerController/Pods-MMDrawerController-prefix.pch
+Pods/Target Support Files/Pods-MMDrawerController/Pods-MMDrawerController-Private.xcconfig
+Pods/Target Support Files/Pods-MMDrawerController/Pods-MMDrawerController.xcconfig
+Pods/Pods.xcodeproj/xcuserdata/daniel.biran.xcuserdatad/xcschemes/Pods-MMDrawerController.xcscheme
+Pods/Target Support Files/Pods/Pods-resources.sh
+Pods/Target Support Files/Pods/Pods.debug.xcconfig
+Pods/Target Support Files/Pods/Pods.release.xcconfig
+Pods/Pods.xcodeproj/xcuserdata/daniel.biran.xcuserdatad/xcschemes/Pods.xcscheme
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/MMDrawerController/README.md
+Pods/Headers/Build/MMDrawerController/UIViewController+MMDrawerController.h
+Pods/Headers/Public/MMDrawerController/UIViewController+MMDrawerController.h
+Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.h
+Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m
+Pods/Pods.xcodeproj/xcuserdata/daniel.biran.xcuserdatad/xcschemes/xcschememanagement.plist
